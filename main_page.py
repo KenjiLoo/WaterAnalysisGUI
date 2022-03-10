@@ -21,7 +21,7 @@ title_logo = Label(window, text="", image=logo, compound=CENTER, background="whi
 title_logo.grid(row=0, column=1)
 
 # empty space between title logo and the app logo
-empty2 = Label(window, text="                                                                          ",background="white")
+empty2 = Label(window, text="                                                                          ", background="white")
 empty2.grid(row=0, column=2)
 
 # top bar right side logo
