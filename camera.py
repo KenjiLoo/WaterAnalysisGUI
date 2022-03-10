@@ -16,6 +16,7 @@ def finalPage(tk):
 window = Tk()
 window.minsize(850,450)
 window.maxsize(1000, 550)
+window.title("Water Analysis Grp9A")
 window.configure(bg="white")
 style = ttk.Style()
 style.configure("BW.TLabel", background="white")
