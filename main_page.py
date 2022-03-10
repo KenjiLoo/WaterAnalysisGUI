@@ -1,11 +1,15 @@
 from tkinter import *
-from tkinter.ttk import *
+# from tkinter.ttk import *
+from tkinter import ttk
 
 # --------------------------------------TOP BAR---------------------------------------------------
 # define window as GUI window, set minimum dimension
 window = Tk()
 window.minsize(850,450)
 window.maxsize(1000, 550)
+window.configure(bg="white")
+style = ttk.Style()
+style.configure("BW.TLabel", background="white")
 
 # empty space for arranging elements
 empty = Label(window, text="                                                                                                         ")
@@ -28,17 +32,17 @@ right_logo.grid(row=0, column=3)
 # --------------------------------------MAIN BUTTONS---------------------------------------------------
 # button 1
 button1_image = PhotoImage(file = "Assets/button1.png")
-button1 = Button(window, image=button1_image)
+button1 = Button(window, image=button1_image, background="white", borderwidth=0, activeforeground="white", activebackground="white")
 button1.grid(row=1, column=0)
 
 # button 2
 button2_image = PhotoImage(file = "Assets/button2.png")
-button2 = Button(window, image=button2_image)
+button2 = Button(window, image=button2_image, background="white", borderwidth=0, activeforeground="white", activebackground="white")
 button2.grid(row=1, column=1)
 
 # button 3
 button3_image = PhotoImage(file = "Assets/button3.png")
-button3 = Button(window, image=button3_image)
+button3 = Button(window, image=button3_image, background="white", borderwidth=0, activeforeground="white", activebackground="white")
 button3.grid(row=1, column=2)
 
 
