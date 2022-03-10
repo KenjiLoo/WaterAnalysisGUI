@@ -12,21 +12,21 @@ style = ttk.Style()
 style.configure("BW.TLabel", background="white")
 
 # empty space for arranging elements
-empty = Label(window, text="                                                                                                         ")
+empty = Label(window, text="                                                                                                         ", background="white")
 empty.grid(row=0, column=0)
 
 # top bar with logo
 logo = PhotoImage(file = "Assets/Group 2.png")
-title_logo = Label(window, text="", image=logo, compound=CENTER)
+title_logo = Label(window, text="", image=logo, compound=CENTER, background="white")
 title_logo.grid(row=0, column=1)
 
 # empty space between title logo and the app logo
-empty2 = Label(window, text="                                                                          ")
+empty2 = Label(window, text="                                                                          ",background="white")
 empty2.grid(row=0, column=2)
 
 # top bar right side logo
 logo2 = PhotoImage(file = "Assets/logo 2.png")
-right_logo = Label(window, text="", image=logo2, compound=CENTER)
+right_logo = Label(window, text="", image=logo2, compound=CENTER, background="white")
 right_logo.grid(row=0, column=3)
 
 # --------------------------------------MAIN BUTTONS---------------------------------------------------
