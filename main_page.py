@@ -1,5 +1,5 @@
+import webbrowser
 from tkinter import *
-# from tkinter.ttk import *
 from tkinter import ttk
 
 #-- FUNCTION DEFINITION --#
@@ -7,11 +7,14 @@ def cameraPage(tk):
     tk.destroy()
     import camera
 
+def callWeb():
+    webbrowser.open_new(r"https://www.google.com")
+
 # --------------------------------------TOP BAR---------------------------------------------------
 # define window as GUI window, set minimum dimension
 window = Tk()
 window.minsize(850,450)
-window.maxsize(1000, 550)
+window.maxsize(855, 455)
 window.title("Water Analysis Grp9A")
 window.configure(bg="white")
 style = ttk.Style()
@@ -52,7 +55,8 @@ button1 = Button(window,
                  background="white",
                  borderwidth=0,
                  activeforeground="white",
-                 activebackground="white")
+                 activebackground="white",
+                 command=lambda : callWeb())
 button1.grid(row=1, column=0)
 
 # button 2
@@ -73,7 +77,8 @@ button3 = Button(window,
                  background="white",
                  borderwidth=0,
                  activeforeground="white",
-                 activebackground="white")
+                 activebackground="white",
+                 command=lambda : callWeb())
 button3.grid(row=1, column=2)
 
 # to run the window

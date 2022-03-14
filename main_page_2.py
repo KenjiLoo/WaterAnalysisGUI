@@ -1,3 +1,4 @@
+import webbrowser
 from tkinter import *
 from tkinter import ttk
 
@@ -5,6 +6,9 @@ from tkinter import ttk
 def cameraPage(tk):
     tk.destroy()
     import main_page
+
+def callWeb():
+    webbrowser.open_new(r"https://www.google.com")
 
 # --------------------------------------TOP BAR---------------------------------------------------
 # define window as GUI window, set minimum dimension
@@ -53,7 +57,8 @@ button1 = Button(window,
                  background="white",
                  activeforeground="white",
                  activebackground="white",
-                 borderwidth=0)
+                 borderwidth=0,
+                 command=lambda : callWeb())
 button1.grid(row=1, column=0)
 
 # button 2
@@ -76,27 +81,28 @@ button3 = Button(window,
                  background="white",
                  activeforeground="white",
                  activebackground="white",
-                 borderwidth=0)
+                 borderwidth=0,
+                 command=lambda : callWeb())
 button3.grid(row=1, column=2)
 
 # --------------------------------------3rd ROW BUTTONS---------------------------------------------------
-# empty space as row 3, 4, 5
-empty3 = Label(window, text=" ", background="white")
-empty3.grid(row=3, column=0)
-empty4 = Label(window, text=" ", background="white")
-empty4.grid(row=4, column=0)
-empty5 = Label(window, text=" ", background="white")
-empty5.grid(row=5, column=0)
+# # empty space as row 3, 4, 5
+# empty3 = Label(window, text=" ", background="white")
+# empty3.grid(row=3, column=0)
+# empty4 = Label(window, text=" ", background="white")
+# empty4.grid(row=4, column=0)
+# empty5 = Label(window, text=" ", background="white")
+# empty5.grid(row=5, column=0)
 
-# button 4
-button4_image = PhotoImage(file="Assets/button4_2.png")
-button4 = Button(window,
-                 image=button4_image,
-                 background="white",
-                 activeforeground="white",
-                 activebackground="white",
-                 borderwidth=0)
-button4.grid(row=4, column=1)
+# # button 4
+# button4_image = PhotoImage(file="Assets/button4_2.png")
+# button4 = Button(window,
+#                  image=button4_image,
+#                  background="white",
+#                  activeforeground="white",
+#                  activebackground="white",
+#                  borderwidth=0)
+# button4.grid(row=4, column=1)
 
 # to run the window
 window.mainloop()
