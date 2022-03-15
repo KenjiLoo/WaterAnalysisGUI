@@ -45,7 +45,7 @@ success.grid(row=1, column=0, pady=(100,10))
 
 # id display
 id = Label(window,
-           text="ID: 20202143",
+           text="ID: 2",
            compound=CENTER,
            font=("Arial", 20),
            background="white")

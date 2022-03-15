@@ -64,7 +64,7 @@ button1.grid(row=1, column=0)
 # button 2
 button2_image = PhotoImage(file="Assets/button2_2.png")
 button2 = Button(window,
-                 text="ID: 2020218",
+                 text="ID: 2",
                  compound=TOP,
                  image=button2_image,
                  background="white",
