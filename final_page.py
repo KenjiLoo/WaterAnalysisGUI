@@ -1,3 +1,4 @@
+import webbrowser
 from tkinter import *
 from tkinter import ttk
 
@@ -9,6 +10,9 @@ def homePage(tk):
 def cameraPage(tk):
     tk.destroy()
     import camera
+
+def callWeb():
+    webbrowser.open_new(r"https://www.google.com")
 
 # --------------------------------------TOP BAR---------------------------------------------------
 # define window as GUI window, set minimum dimension
@@ -63,7 +67,8 @@ button1 = Button(window,
                  background="white",
                  activeforeground="white",
                  activebackground="white",
-                 borderwidth=0)
+                 borderwidth=0,
+                 command=lambda : callWeb())
 button1.grid(row=6, column=0)
 
 # button 2

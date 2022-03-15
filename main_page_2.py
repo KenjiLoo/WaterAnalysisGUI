@@ -13,7 +13,7 @@ def callWeb():
 # --------------------------------------TOP BAR---------------------------------------------------
 # define window as GUI window, set minimum dimension
 window = Tk()
-window.minsize(850, 450)
+window.minsize(850, 400)
 window.maxsize(1000, 550)
 window.title("Water Analysis Grp9A")
 window.configure(bg="white")
