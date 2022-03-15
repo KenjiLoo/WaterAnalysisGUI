@@ -41,7 +41,7 @@ blue_bar.grid(row=0, columnspan=3)
 # success wording
 success_image = PhotoImage(file = "Assets/success_wording.png")
 success = Label(window, image=success_image, background="white")
-success.grid(row=1, column=0)
+success.grid(row=1, column=0, pady=(100,10))
 
 # id display
 id = Label(window,
