@@ -1,5 +1,8 @@
 from tkinter import *
 from tkinter import ttk
+from PIL import Image, ImageTk
+import cv2
+
 
 #-- FUNCTION DEFINITION --#
 def homePage(tk):
@@ -14,7 +17,7 @@ def finalPage(tk):
 # --------------------------------------TOP BAR---------------------------------------------------
 # define window as GUI window, set minimum dimension
 window = Tk()
-window.minsize(850,450)
+window.minsize(850,625)
 window.maxsize(1000, 550)
 window.title("Water Analysis Grp9A")
 window.configure(bg="white")
@@ -42,13 +45,31 @@ empty2 = Label(window, text="                                           ", backg
 empty2.grid(row=1, column=2)
 
 # insert camera frame
-camera_frame_image = PhotoImage(file = "Assets/cameraframe.png")
-camera_frame = Label(window,
-                     image=camera_frame_image,
-                     background="white")
-camera_frame.grid(row=1, column=1)
+# Create a Label to capture the Video frames
+label =Label(window)
+label.grid(row=1, column=1)
+cap= cv2.VideoCapture(0)
 
-# --------------------------------------CAMERA FRAME---------------------------------------------------
+# Define function to show frame
+def show_frames():
+   # Get the latest frame and convert into Image
+   cv2image= cv2.cvtColor(cap.read()[1],cv2.COLOR_BGR2RGB)
+   img = Image.fromarray(cv2image)
+   # Convert image to PhotoImage
+   imgtk = ImageTk.PhotoImage(image = img)
+   label.imgtk = imgtk
+   label.configure(image=imgtk)
+   # Repeat after an interval to capture continiously
+   label.after(20, show_frames)
+
+show_frames()
+# camera_frame_image = PhotoImage(file = "Assets/cameraframe.png")
+# camera_frame = Label(window,
+#                      image=camera_frame_image,
+#                      background="white")
+# camera_frame.grid(row=1, column=1)
+
+# --------------------------------------CAMERA CAPTURE BUTTON---------------------------------------------------
 # insert camera capture button
 camera_capture_image = PhotoImage(file = "Assets/camera_capture.png")
 camera_capture = Button(window,
