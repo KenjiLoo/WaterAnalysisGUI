@@ -14,12 +14,12 @@ def finalPage(tk):
     tk.destroy()
     import final_page
 
+
 # --------------------------------------TOP BAR---------------------------------------------------
 # define window as GUI window, set minimum dimension
 window = Tk()
-window.minsize(850,625)
-window.maxsize(1000, 550)
 window.title("Water Analysis Grp9A")
+window.maxsize(window, )
 window.configure(bg="white")
 style = ttk.Style()
 style.configure("BW.TLabel", background="white")
@@ -29,25 +29,25 @@ blue_bar_image = PhotoImage(file = "Assets/blue_bar.png")
 blue_bar = Button(window, text="<Homepage",
                   compound=RIGHT,
                   image=blue_bar_image,
-                  background="white",
+                  background="#81D3F9",
                   activeforeground="white",
                   activebackground="white",
                   borderwidth=0,
                   command=lambda : homePage(window))
-blue_bar.grid(row=0, columnspan=3)
+blue_bar.pack(fill=BOTH)
 
 # --------------------------------------CAMERA FRAME---------------------------------------------------
 # insert empty space
 empty = Label(window, text="", background="white")
-empty.grid(row=1, column=0)
+empty.pack()
 
 empty2 = Label(window, text="                                           ", background="white")
-empty2.grid(row=1, column=2)
+empty2.pack()
 
 # insert camera frame
 # Create a Label to capture the Video frames
 label =Label(window)
-label.grid(row=1, column=1)
+label.pack()
 cap= cv2.VideoCapture(0)
 
 # Define function to show frame
@@ -61,6 +61,8 @@ def show_frames():
    label.configure(image=imgtk)
    # Repeat after an interval to capture continiously
    label.after(20, show_frames)
+   label.place(x=241, y=65, anchor='c')
+
 
 show_frames()
 # camera_frame_image = PhotoImage(file = "Assets/cameraframe.png")
@@ -79,7 +81,9 @@ camera_capture = Button(window,
                         activebackground="white",
                         borderwidth=0,
                         command=lambda : finalPage(window))
-camera_capture.grid(row=2, column=1)
+camera_capture.pack()
+
+
 
 # to run the window
 window.mainloop()
