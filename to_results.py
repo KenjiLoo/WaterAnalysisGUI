@@ -2,6 +2,7 @@ import webbrowser
 from tkinter import *
 from tkinter import ttk
 
+
 #-- FUNCTION DEFINITION --#
 def cameraPage(tk):
     tk.destroy()
@@ -58,7 +59,7 @@ button1 = Button(window,
                  activeforeground="white",
                  activebackground="white",
                  borderwidth=0,
-                 command=lambda : callWeb())
+                 command=lambda : cameraPage(window))
 button1.grid(row=1, column=0)
 
 # button 2
@@ -71,7 +72,7 @@ button2 = Button(window,
                  activeforeground="white",
                  activebackground="white",
                  borderwidth=0,
-                 command=lambda : cameraPage(window))
+                 command=lambda : callWeb())
 button2.grid(row=1, column=1)
 
 # button 3

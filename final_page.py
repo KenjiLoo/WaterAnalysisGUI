@@ -5,7 +5,7 @@ from tkinter import ttk
 #-- FUNCTION DEFINITION --#
 def homePage(tk):
     tk.destroy()
-    import main_page_2
+    import main_page
 
 def cameraPage(tk):
     tk.destroy()
@@ -27,13 +27,14 @@ style.configure("BW.TLabel", background="white")
 # set blue bar
 blue_bar_image = PhotoImage(file = "Assets/blue_bar.png")
 blue_bar = Button(window,
-                  text="<Retake",
+                  text="< Retake",
                   compound=RIGHT,
                   image=blue_bar_image,
-                  background="white",
+                  background="#81D3F9",
                   activeforeground="white",
                   activebackground="white",
                   borderwidth=0,
+                  font=("IBM Plex Sans", 10),
                   command=lambda : cameraPage(window))
 blue_bar.grid(row=0, columnspan=3)
 
