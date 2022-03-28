@@ -27,16 +27,16 @@ style.configure("BW.TLabel", background="white")
 # set blue bar
 blue_bar_image = PhotoImage(file = "Assets/blue_bar.png")
 blue_bar = Button(window,
-                  text="< Retake",
+                  text="",
                   compound=RIGHT,
                   image=blue_bar_image,
                   background="#81D3F9",
                   activeforeground="white",
                   activebackground="white",
                   borderwidth=0,
-                  font=("IBM Plex Sans", 10),
+                  font=("Poppins", 10),
                   command=lambda : cameraPage(window))
-blue_bar.grid(row=0, columnspan=3)
+blue_bar.grid(row=0, columnspan=4)
 
 # --------------------------------------WORDS---------------------------------------------------
 # success wording
@@ -81,7 +81,18 @@ button2 = Button(window,
                  activebackground="white",
                  borderwidth=0,
                  command=lambda : homePage(window))
-button2.grid(row=6, column=1)
+button2.grid(row=6, column=2)
+
+# button 3
+button3_image = PhotoImage(file = "Assets/button2_5.png")
+button3 = Button(window,
+                 image=button3_image,
+                 background="white",
+                 activeforeground="white",
+                 activebackground="white",
+                 borderwidth=0,
+                 command=lambda : homePage(window))
+button3.grid(row=6, column=1)
 
 # to run the window
 window.mainloop()

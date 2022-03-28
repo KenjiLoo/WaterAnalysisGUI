@@ -5,12 +5,11 @@ import cv2
 
 
 #-- FUNCTION DEFINITION --#
-def homePage(tk):
+def cameraPage(tk):
     tk.destroy()
     import camera
-    #take note: may return to main_page_2
 
-def finalPage(tk):
+def timeSettingPage(tk):
     tk.destroy()
     import time_setting
 
@@ -26,7 +25,7 @@ style.configure("BW.TLabel", background="white")
 
 # set blue bar
 blue_bar_image = PhotoImage(file = "Assets/blue_bar.png")
-blue_bar = Button(window, text="< Homepage",
+blue_bar = Button(window, text="< Retake",
                   compound=RIGHT,
                   image=blue_bar_image,
                   background="#81D3F9",
