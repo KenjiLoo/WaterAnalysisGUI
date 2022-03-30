@@ -13,6 +13,25 @@ def mainPage(tk):
 def callWeb():
     webbrowser.open_new(r"https://www.google.com")
 
+#-- LOGIN SYSTEM --*
+def Ok():
+    mysqldb = mysql.connector.connect(host="localhost", user="root", password="", database="water_login")
+    mycursor = mysqldb.cursor()
+    username = username_login_entry.get()
+    password = password__login_entry.get()
+
+    sql = "select * from register where username = %s and password = %s"
+    mycursor.execute(sql, [(username), (password)])
+    results = mycursor.fetchall()
+    if results:
+        messagebox.showinfo("", "Login Success")
+        window.destroy()
+        call(["python", "main_page.py"])
+        return True
+    else:
+        messagebox.showinfo("", "Incorrect Username and Password")
+        return False
+
 # --------------------------------------TOP BAR---------------------------------------------------
 # define window as GUI window, set minimum dimension
 window = Tk()
@@ -53,14 +72,18 @@ right_logo = Label(window,
 right_logo.grid(row=0, column=3)
 
 # --------------------------------------MAIN BUTTONS---------------------------------------------------
+global username_login_entry
+global password__login_entry
+
 Label(window, text="Please enter login details",background="white",font=("Poppins", 10)).grid(row=1, column=1)
 Label(window, text="",background="white").grid(row=2)
 Label(window, text="Username",background="white",font=("Poppins", 10),).grid(row=3, column=1)
-username_login_entry = Entry(window, textvariable="username")
+username_login_entry = Entry(window)
 username_login_entry.grid(row=4, column=1)
 Label(window, text="",background="white").grid(row=5, column=1)
 Label(window, text="Password",background="white",font=("Poppins", 10)).grid(row=6, column=1)
-password__login_entry = Entry(window, textvariable="password", show= '*')
+password__login_entry = Entry(window)
+password__login_entry.config(show="*")
 password__login_entry.grid(row=7, column=1)
 Label(window, text="",background="white",font=("Poppins", 10)).grid(row=8, column=1)
 login_button_image = PhotoImage(file = "Assets/login_button.png")
@@ -71,7 +94,7 @@ login_button = Button(window,
                  activeforeground="white",
                  activebackground="white",
                  font=("Poppins", 10),
-                 command=lambda : mainPage(window))
+                 command=lambda: Ok())
 login_button.grid(row=9, column=1)
 window.mainloop()
 
